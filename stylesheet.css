@@ -5,17 +5,21 @@ div {
 	margin: 10px; 
 	opacity: 0.4;	
 	text-align: center; 
+	font-family: Ubuntu;
 }
 
 body {
     min-width:500px;
 }
 
-h2
-{
-	text-align: center; 
-	font-family: Veranda;
+@font-face {
+  font-family: Ubuntu;
+  src: url('Ubuntu-M.ttf');
+}
 
+h2{
+	text-align: center; 
+	font-family: Ubuntu;
 }
 
 #red {

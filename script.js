@@ -12,6 +12,13 @@ $(document).ready(function() {
        }); 
    });
    $('div').click(function() {
-       $(this).toggle(1000);
+       $(this).siblings().fadeTo("slow", 0);
    }); 
+   $(function() {
+    $( "input[type=submit], a, button" )
+      .button()
+      .click(function( event ) {
+        event.preventDefault();
+      });
+  });
 });
