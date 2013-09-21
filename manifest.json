@@ -1,6 +1,7 @@
 {
   "name": "Facebook Analysis",
   "description": "We analyze your data",
+  "manifest_version": 2,
   "version": "1",
   "app": {
     "launch": {
