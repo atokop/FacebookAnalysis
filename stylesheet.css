@@ -7,6 +7,16 @@ div {
 	text-align: center; 
 }
 
+body {
+    min-width:500px;
+}
+
+h2
+{
+	text-align: center; 
+	font-family: Veranda;
+
+}
 
 #red {
     background-color:#FF0000;
