@@ -1,19 +1,16 @@
 {
-  "name": "Facebook Analysis",
-  "description": "We analyze your data",
   "manifest_version": 2,
-  "version": "1",
-  "app": {
-    "launch": {
-      "local_path": "index.html"
-    }
-  },
-  "icons": {
-    "24": "icon_24.png",
-    "128": "icon_128.png"
-  },
+
+  "name": "Facebook Analyser",
+  "description": "This extension analyses facebook posts.",
+  "version": "1.0",
+
   "permissions": [
-    "unlimited_storage",
-    "notifications"
-  ]
+    "https://secure.flickr.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon_24.png",
+    "default_popup": "popup.html"
+
+  }
 }
