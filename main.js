@@ -137,7 +137,7 @@ function getAllPostsToUser(user) {
     //Some kind of int or double
     return happiness;
   }
-  function sentimentTowardUser(){ 
+  function sentimentTowardUser(user){ 
     var sentiment;
     var pos = 0;
     var neg = 0;
