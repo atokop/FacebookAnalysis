@@ -9,6 +9,7 @@ $(document).ready(function() {
 	   $(this).fadeTo("fast", .4);
        $(this).animate({
            height: '-=20px'
+		   
        }); 
    });
    $('div').click(function() {
@@ -21,10 +22,5 @@ $(document).ready(function() {
         event.preventDefault();
       });
   });
-  var dimensions = {
-	gender: 'm',
-	source: 'web',
-	dayType: 'weekend'
-  };
-Parse.Analytics.track('signup', dimensions);
+  
 });
