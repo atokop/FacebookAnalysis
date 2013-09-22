@@ -6,11 +6,11 @@ var PostObj = Parse.Object.extend("PostObj");
 // Create a new instance of that class.
 var PostObj = new PostObj();
 
-var value = "test" ; 
-var keyword = "test" ; 
-var sender = "test" ; 
-var recipient = "test" ;
-var message = "test" ; 
+var value = "test"; 
+var keyword = "test"; 
+var sender = "test"; 
+var recipient = "test";
+var message = "test"; 
  
 PostObj.set("sentiment", value);
 PostObj.set("keyword", keyword);
