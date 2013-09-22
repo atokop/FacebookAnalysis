@@ -9,6 +9,7 @@ $(document).ready(function() {
 	   $(this).fadeTo("fast", .4);
        $(this).animate({
            height: '-=20px'
+		   
        }); 
    });
    $('div').click(function() {
@@ -20,6 +21,7 @@ $(document).ready(function() {
       .click(function( event ) {
         event.preventDefault();
       });
+<<<<<<< HEAD
   });*/
   $('[value="Log in"]').click(function() {
     //alert("awwwwwwyeah");
@@ -31,4 +33,8 @@ $(document).ready(function() {
 	dayType: 'weekend'
   };
 //Parse.Analytics.track('signup', dimensions);
+=======
+  });
+  
+>>>>>>> abb7f5a43370ccb86f14aed2e477e495a7e75de9
 });
