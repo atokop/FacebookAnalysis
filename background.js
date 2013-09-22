@@ -1,11 +1,13 @@
 /*Parse.initialize("r0VN7VBSbvnnBzNtK0T2TDYYLwN1vmf5OmLqDNJr", "LY1edm5qqxpdFOYwpSJhVmdXnYaTlZF12HjHhanh");
 Parse.FacebookUtils.init();*/
 var successURL = 'www.facebook.com/connect/login_success.html';
+var toke;
 //https://www.facebook.com/dialog/oauth?client_id=597443020297898&response_type=token&scope=read_stream&redirect_uri=http://www.facebook.com/connect/login_success.html
 successUrl = "https://www.facebook.com/connect/blank.html#_=_"
 function onFacebookLogin(){
   if (!localStorage.getItem('accessToken')) {
     console.log("no token yet");
+    toke = null;
   }
     chrome.tabs.query({}, function(tabs) { // get all tabs from every window
       for (var i = 0; i < tabs.length; i++) {
@@ -21,14 +23,23 @@ function onFacebookLogin(){
           var accessToken = params.split('&')[0];
           accessToken = accessToken.split('=')[1];
           localStorage.setItem('accessToken', accessToken);
+          toke = localStorage.getItem('accessToken');
           console.log("token set");
           console.log(localStorage.getItem('accessToken'));
           //chrome.tabs.remove(tabs[i].id);
         }
       }
     });
+    pullData();
   }
 
+function pullData() {
+  console.log("here");
+  $().get('https://graph.facebook.com/fql?q="SELECT uid2 FROM friend WHERE uid1=me()"&access_token='+toke, function(data) {
+      //alert("ting");
+      console.log(data);
+  });
+}
 /*(localStorage.getItem('accessToken')) {
   $.get("fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()&access_token=CAACEdEose0cBALrMfkaI8IywsgNdeZB9pNCFBxu9YvsfnWaQrQGp4JXU44Cfzyy5zt6UxriuIh7j8bCrfVYH41ro7gftZCArGXm1etTVkCoXHNDVPRa8G1lsQjyYRwFjJxmiiG1CDPRKOxXtVnh67Twgboi19R8ZBNDYpkwJWPZAQow59mGzeqRtPqMwY2wZD",
       function(data) {
