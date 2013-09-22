@@ -31,13 +31,14 @@ function onFacebookLogin(){
         console.log("data");
       })
 */
- else {
+ /*else {
     console.log("token removed")
     localStorage.removeItem('accessToken') 
    }
 //$("div");
 }
-
-chrome.tabs.onUpdated.addListener(onFacebookLogin);
+*/
+//chrome.tabs.onUpdated.addListener(onFacebookLogin);
+localStorage.removeItem('accessToken');
     /*console.log("token removed")
     localStorage.removeItem('accessToken') */
