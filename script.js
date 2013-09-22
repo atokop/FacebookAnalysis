@@ -14,17 +14,21 @@ $(document).ready(function() {
    $('div').click(function() {
        $(this).siblings().fadeTo("slow", 0);
    }); 
-   $(function() {
+   /*$(function() {
     $( "input[type=submit], a, button" )
       .button()
       .click(function( event ) {
         event.preventDefault();
       });
-  });
+  });*/
+  $('[value="Log in"]').click(function() {
+    //alert("awwwwwwyeah");
+    chrome.tabs.create({'url': "https://www.facebook.com/dialog/oauth?client_id=597443020297898&response_type=token&redirect_uri=http://www.facebook.com/connect/login_success.html"}); 
+    });
   var dimensions = {
 	gender: 'm',
 	source: 'web',
 	dayType: 'weekend'
   };
-Parse.Analytics.track('signup', dimensions);
+//Parse.Analytics.track('signup', dimensions);
 });

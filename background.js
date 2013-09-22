@@ -6,10 +6,14 @@ successUrl = "https://www.facebook.com/connect/blank.html#_=_"
 function onFacebookLogin(){
   if (!localStorage.getItem('accessToken')) {
     console.log("no token yet");
+  }
     chrome.tabs.query({}, function(tabs) { // get all tabs from every window
       for (var i = 0; i < tabs.length; i++) {
         if (tabs[i].url.indexOf(successURL) !== -1) {
         	// alert("this");
+          if (localStorage.getItem('accessToken')) {
+            localStorage.removeItem('accessToken');
+          }
           // below you get string like this: access_token=...&expires_in=...
           var params = tabs[i].url.split('#')[1];
 
@@ -19,7 +23,7 @@ function onFacebookLogin(){
           localStorage.setItem('accessToken', accessToken);
           console.log("token set");
           console.log(localStorage.getItem('accessToken'));
-          chrome.tabs.remove(tabs[i].id);
+          //chrome.tabs.remove(tabs[i].id);
         }
       }
     });
@@ -38,7 +42,6 @@ function onFacebookLogin(){
 //$("div");
 }
 */
-//chrome.tabs.onUpdated.addListener(onFacebookLogin);
-localStorage.removeItem('accessToken');
+chrome.tabs.onUpdated.addListener(onFacebookLogin);
     /*console.log("token removed")
     localStorage.removeItem('accessToken') */
