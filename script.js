@@ -21,4 +21,10 @@ $(document).ready(function() {
         event.preventDefault();
       });
   });
+  var dimensions = {
+	gender: 'm',
+	source: 'web',
+	dayType: 'weekend'
+  };
+Parse.Analytics.track('signup', dimensions);
 });

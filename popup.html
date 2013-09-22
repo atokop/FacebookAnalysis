@@ -4,6 +4,7 @@
         <title>FB Analyzer!</title>
         <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
         <script type="text/javascript" src="jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="parse-1.2.12.js"></script>
 		<script type="text/javascript" src="script.js"></script>
 		<h2> My Facebook Stats </h2>
     </head>
@@ -12,6 +13,10 @@
         <div id="blue"> Music</div>
         <div id="yellow">Interests</div>
         <div id="green">Views</div>
+		<div id="dimensions">Test</div>
+		<script>
+		Parse.Analytics.track('signup', dimensions);
+		</script>
 		
 		<input type="submit" value="Log in" href ="https://www.facebook.com/connect/blank.html#_=_"/>
 		
